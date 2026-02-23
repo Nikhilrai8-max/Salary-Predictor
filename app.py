@@ -36,37 +36,37 @@ def main():
     st.title("College Admission & Salary Predictor")
     st.write("Enter your details below to predict college tier, name, branch, and expected salary.")
 
-    # Sidebar for input fields
-    with st.sidebar:
-        st.header("Student Details")
-        
-        # Numerical inputs
-        tenth = st.number_input("10th Percentage", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
-        twelfth = st.number_input("12th Percentage", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
-        jee = st.number_input("JEE Rank", min_value=1, value=1000, step=1)
-        workexp = st.number_input("Work Experience (years)", min_value=0, value=2, step=1)
-        fexp = st.slider("Field Experience (years)", min_value=0, max_value=20, value=2, step=1)
-        proj = st.slider("Number of Projects", min_value=0, max_value=20, value=1, step=1)
-        exp_lev = st.selectbox("Expertise Level", options=[1, 2, 3, 4, 5], index=2)
-        intern = st.slider("Number of Internships", min_value=0, max_value=10, value=0, step=1)
-        soft = st.selectbox("Soft Skills Rating", options=[1, 2, 3, 4, 5], index=2)
-        apt = st.selectbox("Aptitude Rating", options=[1, 2, 3, 4, 5], index=2)
-        dsa = st.selectbox("DSA Level", options=[1, 2, 3, 4, 5], index=2)
-        hack = st.slider("Number of Hackathons", min_value=0, max_value=10, value=0, step=1)
-        codeqs = st.slider("Competitive Coding Questions Solved", min_value=0, max_value=200, value=50, step=10)
-        repos = st.slider("Number of Repositories", min_value=0, max_value=50, value=5, step=1)
-        ghacts = st.slider("GitHub Activities", min_value=0, max_value=50, value=10, step=1)
-        li = st.slider("LinkedIn Posts", min_value=0, max_value=50, value=3, step=1)
-        certs = st.slider("Number of Certifications", min_value=0, max_value=20, value=0, step=1)
-        cgpa = st.slider("CGPA", min_value=1.0, max_value=10.0, value=7.0, step=0.1)
+    # Input fields in main page under the heading
+    st.subheader("Student Details")
+    st.write("Enter your academic and professional details below to get predictions.")
 
-        # Categorical inputs
-        gender = st.selectbox("Gender", options=['Male', 'Female', 'Other'], index=0)
-        domain = st.selectbox("Domain", options=['Full Stack', 'Machine Learning', 'Android Development', 'Other'], index=0)
-        ref = st.selectbox("Referral", options=['Yes', 'No'], index=1)
+    # Numerical inputs
+    tenth = st.number_input("10th Percentage", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
+    twelfth = st.number_input("12th Percentage", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
+    jee = st.number_input("JEE Rank", min_value=1, value=1000, step=1)
+    workexp = st.number_input("Work Experience (years)", min_value=0, value=2, step=1)
+    fexp = st.slider("Field Experience (years)", min_value=0, max_value=20, value=2, step=1)
+    proj = st.slider("Number of Projects", min_value=0, max_value=20, value=1, step=1)
+    exp_lev = st.selectbox("Expertise Level", options=[1, 2, 3, 4, 5], index=2)
+    intern = st.slider("Number of Internships", min_value=0, max_value=10, value=0, step=1)
+    soft = st.selectbox("Soft Skills Rating", options=[1, 2, 3, 4, 5], index=2)
+    apt = st.selectbox("Aptitude Rating", options=[1, 2, 3, 4, 5], index=2)
+    dsa = st.selectbox("DSA Level", options=[1, 2, 3, 4, 5], index=2)
+    hack = st.slider("Number of Hackathons", min_value=0, max_value=10, value=0, step=1)
+    codeqs = st.slider("Competitive Coding Questions Solved", min_value=0, max_value=200, value=50, step=10)
+    repos = st.slider("Number of Repositories", min_value=0, max_value=50, value=5, step=1)
+    ghacts = st.slider("GitHub Activities", min_value=0, max_value=50, value=10, step=1)
+    li = st.slider("LinkedIn Posts", min_value=0, max_value=50, value=3, step=1)
+    certs = st.slider("Number of Certifications", min_value=0, max_value=20, value=0, step=1)
+    cgpa = st.slider("CGPA", min_value=1.0, max_value=10.0, value=7.0, step=0.1)
 
-        # Predict button
-        predict_button = st.button("Predict")
+    # Categorical inputs
+    gender = st.selectbox("Gender", options=['Male', 'Female', 'Other'], index=0)
+    domain = st.selectbox("Domain", options=['Full Stack', 'Machine Learning', 'Android Development', 'Other'], index=0)
+    ref = st.selectbox("Referral", options=['Yes', 'No'], index=1)
+
+    # Predict button
+    predict_button = st.button("Predict")
 
     # Prediction logic
     if predict_button:
